@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangxunwang.unimanager.dao.MemberDao">
+    <resultMap id="my_member" type="com.liangxunwang.unimanager.model.Member">
+        <id column="id" property="id"/>
+        <result column="phone" property="phone"/>
+        <result column="nickname" property="nickname"/>
+        <result column="num" property="num"/>
+        <result column="dnum" property="dnum"/>
+        <result column="sharenum" property="sharenum"/>
+    </resultMap>
+
+    <select id="listMemberByName" resultMap="my_member">
+        SELECT * from ims_xhw_picvote_reg WHERE 1=1
+        <if test="name != null and name != ''">
+            AND id = #{name}
+        </if>
+    </select>
+
+    <update id="update" parameterType="com.liangxunwang.unimanager.model.Member">
+        UPDATE ims_xhw_picvote_reg SET num=#{num}, dnum=#{dnum}, sharenum=#{sharenum}  WHERE id=#{id}
+    </update>
+
+
+
+</mapper>

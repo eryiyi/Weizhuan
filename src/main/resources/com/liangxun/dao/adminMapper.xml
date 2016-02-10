@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangxunwang.unimanager.dao.AdminDao">
+    <resultMap id="my_admin" type="com.liangxunwang.unimanager.model.Admin">
+        <id column="manager_id" property="id"/>
+        <result column="manager_admin" property="username"/>
+        <result column="manager_pass" property="password"/>
+        <result column="is_use" property="isUse"/>
+        <result column="permissions" property="permissions"/>
+        <result column="type" property="type"/>
+        <result column="emp_id" property="empId"/>
+        <result column="goods_count" property="goodsCount"/>
+    </resultMap>
+
+    <select id="findByUsername" resultMap="my_admin" parameterType="String">
+        SELECT * from lx_manager WHERE manager_admin=#{username}
+    </select>
+
+    <select id="findByEmpId" resultMap="my_admin" parameterType="String">
+        SELECT * from lx_manager WHERE EMP_ID=#{empId}
+    </select>
+
+    <insert id="add" parameterType="com.liangxunwang.unimanager.model.Admin">
+        INSERT INTO LX_MANAGER(MANAGER_ID, MANAGER_ADMIN, MANAGER_PASS, IS_USE, PERMISSIONS, TYPE , EMP_ID, GOODS_COUNT)
+         VALUES (#{id}, #{username}, #{password}, #{isUse}, #{permissions, jdbcType=VARCHAR}, #{type}, #{empId}, #{goodsCount, jdbcType=VARCHAR})
+    </insert>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM LX_MANAGER WHERE EMP_ID=#{id}
+    </delete>
+
+    <update id="updateRole" parameterType="String">
+        UPDATE LX_MANAGER SET PERMISSIONS=#{roleId} WHERE EMP_ID=#{empId}
+    </update>
+
+    <update id="updatePass" parameterType="String">
+        UPDATE LX_MANAGER SET MANAGER_PASS=#{pass} WHERE MANAGER_ID=#{id}
+    </update>
+
+    <update id="updateCount" parameterType="String">
+        UPDATE LX_MANAGER SET GOODS_COUNT=#{count} WHERE EMP_ID=#{empId}
+    </update>
+</mapper>

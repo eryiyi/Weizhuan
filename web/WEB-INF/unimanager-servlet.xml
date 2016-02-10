@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+       <context:property-placeholder location="classpath:jdbc.properties" />
+       <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+           <property name="driverClassName" value="${jdbc.driver}" />
+           <property name="url" value="${jdbc.url}" />
+           <property name="username" value="${jdbc.username}" />
+           <property name="password" value="${jdbc.password}" />
+           <property name="defaultAutoCommit" value="false"/>
+       </bean>
+       <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+              <property name="dataSource" ref="dataSource" />
+              <property name="mapperLocations" value="classpath*:com/liangxun/dao/*Mapper.xml"/>
+       </bean>
+       <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="dataSourceTransactionManager">
+              <property name="dataSource" ref="dataSource"/>
+       </bean>
+       <aop:config>
+              <aop:pointcut id="serviceOption" expression="execution(* com.liangxunwang.unimanager.service.*Service.* (..))"/>
+              <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOption"/>
+       </aop:config>
+       <tx:advice id="txAdvice" transaction-manager="dataSourceTransactionManager">
+              <tx:attributes>
+                     <tx:method name="*" rollback-for="com.liangxunwang.unimanager.service.ServiceException"/>
+              </tx:attributes>
+       </tx:advice>
+       <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+              <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+              <property name="basePackage" value="com.liangxunwang.unimanager.dao"/>
+       </bean>
+
+       <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+              <property name="prefix" value="/WEB-INF/views/" />
+              <property name="suffix" value=".jsp" />
+       </bean>
+       <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+              <property name="maxUploadSize" value="1048576000" />
+       </bean>
+       <!--<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />-->
+
+       <context:component-scan base-package="com.liangxunwang" use-default-filters="false">
+              <context:include-filter type="regex" expression="com.liangxunwang.unimanager.mvc.*Controller"/>
+              <context:include-filter type="regex" expression="com.liangxunwang.unimanager.service.*"/>
+              <context:include-filter type="regex" expression="com.liangxunwang.unimanager.dao.*"/>
+       </context:component-scan>
+
+
+       <mvc:annotation-driven/>
+
+       <mvc:interceptors>
+              <bean class="com.liangxunwang.unimanager.mvc.ControllerInterceptor"/>
+       </mvc:interceptors>
+
+</beans>

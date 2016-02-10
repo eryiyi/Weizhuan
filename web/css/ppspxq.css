@@ -1,0 +1,44 @@
+/* CSS Document */
+*{ margin:0px auto; padding:0px; font-family:"Microsoft YaHei",sans-serif; background-color:#fcfcfc;max-width:100%}
+.div_bg{overflow-x:hidden}
+.m{width:100%; margin:0px auto;  height:184px;  }
+.m1{ font-family:"微软雅黑"; font-size:16px; height:auto; width:90%; line-height:18px; display:inline-block;padding:10px 15px; float:left;}
+.m2{ margin:0 auto; }
+.m3{ width:50%; height:60px; border-radius:80px;  overflow:hidden; display:inline-block; margin-left:10px; float:left;}
+.m3 img{ width:100%; height:100%;}
+.m4{ width:40%; font-size:16px; color:#6cbbe3; display:inline-block; float:right; margin:5px 0px 0px 8px;}
+.m5{ width:200px; font-size:14px;  color:#bdbdbd; display:inline-block; float:left; margin:3px 0px 0px 0px;}
+.m7{ float: inherit; margin-top:10px;}
+.m7 span{ width:120px; height:41px; font-size:18px; color:#FFF; display:inline-block; background:#f2437e;text-align:center; float:right; margin:4px 10px 0px 0px; line-height:42px;}
+.m8{width:120px; float:right; display:inline-block; margin-right:10px; color:#7d7d7d; margin-top:20px; text-align:center;}
+.m9{ float:left; width:40%; margin:6px 0px 0px 20px; }
+.m10{ font-size:18px; color:#f41200; width:90px; display:inline-block; height:25px; margin-left: 8px; padding-left: 5px;}
+.m11{ font-size:18px; color:#f41200; width:90px; display:inline-block; height:25px;margin-left: -15px;}
+.m12{ font-size:16px; color:#7d7d7d; width:100px;display:inline-block; margin-top:5px; margin-left: 20px;}
+.m18awe{ padding-left: 10px; color: #f41200; font-size: 16px;margin: 0 auto}
+.m14{ width:100%; float:left; margin-top:5px; border-bottom:1px solid #eeeeee; padding-bottom:2px;}
+.m16{ width:95%; float:left; font-size:18px; color:#7d7d7d; display:inline-block; margin-left:15px;}
+.m16a{ background-image:url(/img/lianxiren.png); background-repeat:no-repeat; width:20px; height:20px;display:inline-block; padding-left:10px;}
+.m17{ width:95%; float:left; font-size:18px; color:#7d7d7d; display:inline-block; margin:10px 15px;}
+.m17a{ background-image:url(/img/dianhua.png); background-repeat:no-repeat; width:20px; height:20px;display:inline-block; padding-left:10px;}
+.m18{  width:95%;  font-size:16px; color:#7d7d7d; display:inline-block; margin:0px 15px; height:30px; line-height:26px;}
+.m18a{ background-image:url(/img/dizhi.png); background-repeat:no-repeat; width:20px; height:20px;display:inline-block; padding-left:10px;}
+.m18aaa{width:95%;font-size:14px; color:#f41200;display:inline-block; margin:0px 15px; height:50px;}
+.m20{ width:98%;margin-right:10px;padding-right: 10px; }
+.m21{ font-size:14px; display:inline-block; line-height:16px; width:98%; margin-bottom: 26px;padding:15px 20px 15px 10px; color:#7d7d7d;}
+.m21 img{ width:96%; margin:0px auto;}
+.m13{ width:60%;height:80px; float:left;overflow: hidden;}
+.dowm_bot{;position:fixed; bottom:0;left:0; }
+.down{max-width:100%;position:fixed; bottom: 0; left: 0}
+/********/
+/* 中等屏幕（桌面显示器，小于等于 1440px） */
+@media screen and (max-width: 320px) {
+
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+
+}
+@media screen and (min-width: 768px) {
+    .m{ float:left;}
+}
+.cont1{border: 1px solid #f41200;padding-left: 30px;}

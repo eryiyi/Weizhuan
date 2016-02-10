@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangxunwang.unimanager.dao.ChildrenDao">
+    <resultMap id="my_child" type="com.liangxunwang.unimanager.model.Children">
+        <id column="cid" property="cid"/>
+        <result column="name" property="name"/>
+        <result column="num" property="num"/>
+        <result column="dnum" property="dnum"/>
+        <result column="sharenum" property="sharenum"/>
+    </resultMap>
+
+    <select id="lists" resultMap="my_child">
+        SELECT * from mine_child WHERE 1=1
+        <if test="name != null and name != ''">
+            AND cid = #{name}
+        </if>
+        ORDER  by cid DESC
+    </select>
+
+    <insert id="save" parameterType="com.liangxunwang.unimanager.model.Children">
+        INSERT INTO mine_child(CID, NAME, NUM, DNUM, SHARENUM)
+        VALUES (#{cid}, #{name, jdbcType=VARCHAR}, #{num}, #{dnum}, #{sharenum})
+    </insert>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM mine_child WHERE CID=#{cid}
+    </delete>
+
+    <update id="update" parameterType="com.liangxunwang.unimanager.model.Children">
+        UPDATE mine_child SET num=#{num}, dnum=#{dnum}, sharenum=#{sharenum}  WHERE cid=#{cid}
+    </update>
+
+
+</mapper>

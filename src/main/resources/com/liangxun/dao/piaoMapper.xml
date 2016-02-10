@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangxunwang.unimanager.dao.PiaoDao">
+    <resultMap id="my_piao" type="com.liangxunwang.unimanager.model.PiaoAdd">
+        <id column="pid" property="pid"/>
+        <result column="addone" property="addone"/>
+        <result column="addtwo" property="addtwo"/>
+        <result column="delone" property="delone"/>
+        <result column="deltwo" property="deltwo"/>
+        <result column="datetime" property="datetime"/>
+        <result column="addshareone" property="addshareone"/>
+        <result column="addsharetwo" property="addsharetwo"/>
+        <result column="handnum" property="handnum"/>
+    </resultMap>
+
+    <select id="lists" resultMap="my_piao">
+        SELECT * from mine_piao WHERE 1=1
+    </select>
+
+    <insert id="save" parameterType="com.liangxunwang.unimanager.model.PiaoAdd">
+        INSERT INTO mine_piao(PID, ADDONE, ADDTWO, DELONE, DELTWO,DATETIME, ADDSHAREONE, ADDSHARETWO, HANDNUM)
+        VALUES (#{pid}, #{addone}, #{addtwo}, #{delone}, #{deltwo},#{datetime},#{addshareone},#{addsharetwo},#{handnum})
+    </insert>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM mine_piao
+    </delete>
+
+</mapper>

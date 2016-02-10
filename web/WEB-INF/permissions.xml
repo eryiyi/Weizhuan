@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions id="ALL" name="所有权限">
+    <group id="ROLE_MANAGE" name="角色管理">
+        <permission id="LIST_ROLE" name="角色列表"/>
+        <permission id="ADD_ROLE" name="添加角色"/>
+    </group>
+    <group id="EMPLOYEE_MANAGE" name="会员管理">
+        <permission id="LIST_EMPLOYEE" name="会员列表"/>
+    </group>
+    <group id="CONTRACT_MANAGE" name="承包商管理">
+        <permission id="CONTRACT_LIST" name="承包商列表"/>
+    </group>
+    <group id="ADVERT_MANAGE" name="广告管理">
+        <permission id="ADVERT_LIST" name="广告列表"/>
+        <permission id="ADD_ADVERT" name="增加广告"/>
+        <permission id="LX_ADVERT" name="良讯广告"/>
+    </group>
+    <group id="PK_ACTIVE_MANAGE" name="PK活动管理">
+        <permission id="ACTIVE_LIST" name="活动列表"/>
+        <permission id="ADD_ACTIVE" name="增加活动"/>
+        <permission id="CHINA_CHAMPION" name="全国冠军"/>
+    </group>
+    <group id="LEVEL_MANAGE" name="等级维护">
+        <permission id="LEVEL_LIST" name="等级列表"/>
+        <permission id="ADD_LEVEL" name="添加等级"/>
+    </group>
+    <group id="MARKET_CLASS" name="集市分类">
+        <permission id="LIST_CLASS" name="分类列表"/>
+        <permission id="ADD_CLASS" name="添加分类"/>
+    </group>
+    <group id="NEWS_CLASS" name="新闻类别">
+        <permission id="NEWS_LIST_CLASS" name="类别列表"/>
+        <permission id="NEWS_ADD_CLASS" name="添加类别"/>
+    </group>
+    <group id="NEWS_MANAGE" name="新闻管理">
+        <permission id="NEWS_LIST" name="新闻列表"/>
+        <permission id="ADD_NEWS" name="添加新闻"/>
+    </group>
+    <group id="POINT_MANAGE" name="积分管理">
+        <permission id="POINT_LIST" name="积分列表"/>
+        <permission id="ADD_POINT" name="添加类型"/>
+    </group>
+    <group id="NOTICE_MANAGE" name="公告管理">
+        <permission id="NOTICE_LIST" name="公告列表"/>
+        <permission id="ADD_NOTICE" name="添加公告"/>
+    </group>
+    <group id="PART_TIME_CLASS" name="兼职类别">
+        <permission id="PART_TIME_LIST_CLASS" name="类别列表"/>
+        <permission id="PART_TIME_ADD_CLASS" name="添加类别"/>
+    </group>
+    <group id="LOG_MANAGE" name="日志记录">
+        <permission id="LOG_LIST" name="记录列表"/>
+    </group>
+    <group id="GENERATE_RECORD" name="生成动态">
+        <permission id="ADD_RECORD" name="生成动态"/>
+    </group>
+    <group id="MINE_SCHOOL" name="我是承包商">
+        <permission id="SCHOOL_LIST" name="学校列表"/>
+        <permission id="MINE_MERCHANT" name="我的商家"/>
+        <permission id="OPEN_MERCHANT" name="开通商家"/>
+    </group>
+    <group id="VIEWPAGER_MANAGE" name="轮播管理">
+        <permission id="VIEWPAGER_ADD" name="添加轮播"/>
+        <permission id="VIEWPAGER_LIST" name="轮播列表"/>
+    </group>
+    <group id="SYSTEM_MANAGE" name="系统管理">
+        <permission id="MODIFY_PASS" name="修改密码"/>
+        <permission id="MANAGER_INFO" name="信息维护"/>
+    </group>
+    <group id="REMIT_MANAGER" name="汇款结算">
+        <permission id="REMIT_SELLERLIST" name="商家结算"/>
+        <permission id="REMIT_CONTRACTLIST" name="承包商结算"/>
+    </group>
+    <group id="RATE_MANAGER" name="费率管理">
+        <permission id="MODIFY_RATE" name="修改费率"/>
+    </group>
+
+    <group id="INCOME_MANAGER" name="营业收入">
+        <permission id="IINCOME_LIST" name="收入查询"/>
+        <permission id="SELLERLIST_LIST" name="结算查询"/>
+    </group>
+
+
+</permissions>
