@@ -60,7 +60,7 @@
 	<div class="container-fluid expanded-panel">
 		<div class="row">
 			<div id="logo" class="col-xs-12 col-sm-2">
-				<a href="javascript:void(0);">萌宝自动加票系统</a>
+				<a href="javascript:void(0);">文章自动发布系统</a>
 			</div>
 			<div id="top-panel" class="col-xs-12 col-sm-10">
 				<div class="row">
@@ -116,23 +116,24 @@
 					<li class="dropdown">
 						<a href="javascript:void (0);" class="dropdown-toggle">
 							<i class="fa fa-table"></i>
-							<span class="hidden-xs">萌宝管理</span>
+							<span class="hidden-xs">文章管理</span>
 						</a>
 						<ul class="dropdown-menu">
-								<li><a href="javascript:void(0);" onclick="toPage('/role/add','')">添加宝宝</a></li>
-								<li><a href="javascript:void(0);" onclick="toPage('/children/list','')">宝宝列表</a></li>
+								<li><a href="javascript:void(0);" onclick="toPage('/guize/add','')">添加规则</a></li>
+								<li><a href="javascript:void(0);" onclick="toPage('/guize/guizelist','')">规则列表</a></li>
+								<li><a href="javascript:void(0);" onclick="toPage('/wenzhang/list','')">文章列表</a></li>
 						</ul>
 					</li>
 
-					<li class="dropdown">
-						<a href="javascript:void (0);" class="dropdown-toggle">
-							<i class="fa fa-table"></i>
-							<span class="hidden-xs">自动加票</span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="javascript:void(0);" onclick="toPage('role/addPiao','1')">规则设置</a></li>
-						</ul>
-					</li>
+					<%--<li class="dropdown">--%>
+						<%--<a href="javascript:void (0);" class="dropdown-toggle">--%>
+							<%--<i class="fa fa-table"></i>--%>
+							<%--<span class="hidden-xs">自动加票</span>--%>
+						<%--</a>--%>
+						<%--<ul class="dropdown-menu">--%>
+							<%--<li><a href="javascript:void(0);" onclick="toPage('role/addPiao','1')">规则设置</a></li>--%>
+						<%--</ul>--%>
+					<%--</li>--%>
 
 			</ul>
 		</div>

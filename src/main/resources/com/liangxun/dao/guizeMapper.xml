@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangxunwang.unimanager.dao.GuizeDao">
+    <resultMap id="guize" type="com.liangxunwang.unimanager.model.Guize">
+        <id column="guize_id" property="guize_id"/>
+        <result column="guize_time" property="guize_time"/>
+        <result column="guize_number" property="guize_number"/>
+        <result column="guize_table" property="guize_table"/>
+    </resultMap>
+
+    <select id="lists" resultMap="guize">
+        SELECT * from lbins_guize WHERE 1=1
+    </select>
+
+    <insert id="save" parameterType="com.liangxunwang.unimanager.model.Guize">
+        INSERT INTO lbins_guize(GUIZE_ID, GUIZE_TIME, GUIZE_NUMBER, GUIZE_TABLE)
+        VALUES (#{guize_id}, #{guize_time}, #{guize_number}, #{guize_table})
+    </insert>
+
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM lbins_guize
+    </delete>
+</mapper>

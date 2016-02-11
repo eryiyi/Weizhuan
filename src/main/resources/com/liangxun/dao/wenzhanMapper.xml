@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangxunwang.unimanager.dao.WenzhangDao">
+    <resultMap id="wenzhang" type="com.liangxunwang.unimanager.model.Wenzhang">
+        <id column="content_id" property="content_id"/>
+        <result column="class_id" property="class_id"/>
+        <result column="title" property="title"/>
+        <result column="position" property="position"/>
+        <result column="status" property="status"/>
+        <result column="time" property="time"/>
+        <result column="views" property="views"/>
+    </resultMap>
+
+    <select id="listWenzhang" resultMap="wenzhang">
+        SELECT * from dux_content WHERE 1=1 AND  status = '0'
+        <if test="title != null and title != ''">
+            AND title = #{title}
+        </if>
+        ORDER  by content_id DESC
+    </select>
+
+    <!--<update id="update" parameterType="com.liangxunwang.unimanager.model.Wenzhang">-->
+        <!--UPDATE ims_xhw_picvote_reg SET num=#{num}, dnum=#{dnum}, sharenum=#{sharenum}  WHERE id=#{id}-->
+    <!--</update>-->
+
+
+
+</mapper>
